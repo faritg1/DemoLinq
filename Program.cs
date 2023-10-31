@@ -9,5 +9,6 @@ internal class Program
         //demo.PrintData();
         //demo.QueryData();
         demoTwo.PrintDta();
+        demoTwo.PrintDta2();
     }
 }

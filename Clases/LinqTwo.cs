@@ -16,4 +16,13 @@ public class LinqTwo
         var teenPerson = _student.Where(x => x.Age > 12 && x.Age < 20).ToList<Student>();
         teenPerson.ForEach(tp => Console.WriteLine($"Nombre {tp.Name}"));
     }
+
+    public void PrintDta2(){
+        var expre = from s in _student select new {
+            s.Id,s.Name
+        };
+        foreach(var item in expre){
+            Console.WriteLine($"{item.Id} {item.Name}");
+        }
+    }
 }
