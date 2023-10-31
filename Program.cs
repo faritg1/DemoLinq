@@ -5,7 +5,9 @@ internal class Program
     private static void Main(string[] args)
     {
         LinqOne demo = new LinqOne();
+        LinqTwo demoTwo = new LinqTwo();
         //demo.PrintData();
-        demo.QueryData();
+        //demo.QueryData();
+        demoTwo.PrintDta();
     }
 }
