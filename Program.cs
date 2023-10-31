@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using DemoLinq.Clases;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        LinqOne demo = new LinqOne();
+        demo.PrintData();
+    }
+}
