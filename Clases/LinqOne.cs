@@ -28,4 +28,18 @@ public class LinqOne
         Console.WriteLine("Gracias por usar este programa");
         Console.ReadKey();
     }
+
+    public void QueryData(){
+        Console.WriteLine("Ingrese el criterio de busqueda");
+        string criterio = Console.ReadLine();
+        
+        var e = from x in Libros 
+                where x.Contains(criterio)
+                select x;
+
+        List<string> result = e.ToList(); 
+        result.ForEach(item => Console.WriteLine($"Se encontro : {item}"));
+        Console.WriteLine("Gracias por usar este programa");
+        Console.ReadKey();
+    }
 }
