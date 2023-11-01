@@ -8,8 +8,9 @@ internal class Program
         LinqTwo demoTwo = new LinqTwo();
         //demo.PrintData();
         //demo.QueryData();
-        demoTwo.PrintDta();
-        demoTwo.PrintDta2();
-        demoTwo.PrintDta3();
+        //demoTwo.PrintDta();
+        //demoTwo.PrintDta2();
+        //demoTwo.PrintDta3();
+        demoTwo.PrintDta4();
     }
 }
