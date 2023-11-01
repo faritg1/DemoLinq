@@ -9,7 +9,8 @@ public class LinqTwo
     List<Student> _student = new List<Student>(){
         new Student(){Id = 12, Name = "Juan", Age = 12},
         new Student(){Id = 13, Name = "Carlos", Age = 14},
-        new Student(){Id = 14, Name = "Sebastian", Age = 62}
+        new Student(){Id = 14, Name = "Sebastian", Age = 62},
+        new Student(){Id = 14, Name = "Fait", Age = 62}
     };
 
     public void PrintDta(){
@@ -23,6 +24,19 @@ public class LinqTwo
         };
         foreach(var item in expre){
             Console.WriteLine($"{item.Id} {item.Name}");
+        }
+    }
+
+    public void PrintDta3(){
+        var filteredResults = _student.Where((s, i) => {
+            if(i % 2 == 0){
+                return true;
+            }
+        return false;
+        });
+
+        foreach(var result in filteredResults){
+            Console.WriteLine(result.Name);
         }
     }
 }
