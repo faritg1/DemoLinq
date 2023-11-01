@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 namespace DemoLinq.Clases;
 public class LinqTwo
 {
+    List<Standard> _standard = new List<Standard>(){
+        new Standard(){Id = 1, Name = "FFFFFF"},
+        new Standard(){Id = 2, Name = "cccccc"},
+        new Standard(){Id = 3, Name = "ggggggg"}
+    };
     List<Student> _student = new List<Student>(){
-        new Student(){Id = 12, Name = "Juan", Age = 12},
-        new Student(){Id = 13, Name = "Carlos", Age = 14},
-        new Student(){Id = 14, Name = "Sebastian", Age = 62},
+        new Student(){Id = 12, Name = "Juan", Age = 12, StandardIdFk = 1},
+        new Student(){Id = 13, Name = "Carlos", Age = 14, StandardIdFk = 2},
+        new Student(){Id = 14, Name = "Sebastian", Age = 62, StandardIdFk = 3},
         new Student(){Id = 14, Name = "Fait", Age = 62}
     };
 
@@ -88,5 +93,17 @@ public class LinqTwo
                 Console.Clear();
             }
         } while (entrando);
+    }
+
+    public void PrintDta5Fk(){
+        var innerJoin = _student.Join(
+            _standard,
+            student => student.StandardIdFk,
+            standard => standard.Id,
+            (student, standard) => new{
+                StudentName = student.Name,
+                StandardName = standard.Name
+            }).ToList();
+        innerJoin.ForEach(n =>Console.WriteLine($"Nombres {n.StandardName} -- {n.StudentName}"));
     }
 }

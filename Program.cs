@@ -11,6 +11,7 @@ internal class Program
         //demoTwo.PrintDta();
         //demoTwo.PrintDta2();
         //demoTwo.PrintDta3();
-        demoTwo.PrintDta4();
+        //demoTwo.PrintDta4();
+        demoTwo.PrintDta5Fk();
     }
 }

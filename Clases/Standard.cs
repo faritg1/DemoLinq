@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 
 namespace DemoLinq.Clases
 {
-    public class Student
+    public class Standard
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Age { get; set; }
-        public int StandardIdFk { get; set; }
     }
 }
